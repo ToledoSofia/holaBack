@@ -35,10 +35,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Paso 4: Ejecutar pruebas
+      # Paso 4: Asegurar permisos de Jest
+      - name: Ensure Jest is executable
+        run: chmod +x ./node_modules/.bin/jest
+
+      # Paso 5: Ejecutar pruebas
       - name: Run Tests
-        run: npm test
-        
+        run: npx jest
+  
   build:
     runs-on: ubuntu-latest
     permissions:

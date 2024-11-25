@@ -1,21 +1,27 @@
 {
-  "name": "holaback",
-  "version": "0.0.0",
-  "private": true,
+  "name": "back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "test": "npx jest"
-
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1"
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
+    "jasmine": "^5.4.0",
     "jest": "^29.7.0",
     "supertest": "^7.0.0"
   }

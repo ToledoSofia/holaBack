@@ -49,25 +49,18 @@
     const SECRET_KEY = crypto.randomBytes(64).toString('hex');
 
 
+    sequelize.authenticate()
+        .then(() => console.log('Conectado a la base de datos.'))
+        .catch(err => console.error('Error al conectar a la base de datos:', err));
+
+    sequelize.sync()
+        .then(() => console.log('Modelo de usuario sincronizado con la base de datos.'));
 
 
 
-
-    app.get('/', function (req, res, next) {
-        res.status(200).json({ message: 'Welcome to Express!' });
-      });
-      
-      sequelize.authenticate()
-      .then(() => console.log('Conectado a la base de datos.'))
-      .catch(err => console.error('Error al conectar a la base de datos:', err));
-
-  sequelize.sync()
-      .then(() => console.log('Modelo de usuario sincronizado con la base de datos.'));
-
-      app.post('/register', async (req, res) => {
+    app.post('/register', async (req, res) => {
         const { nombre, apellido, usuario, contrasena, ubicacion } = req.body;
-        
-
+    
         try {
             // Verificar si el usuario ya existe
             const existingUser = await Musico.findOne({ where: { usuario } });
@@ -378,14 +371,10 @@ app.get('/publicaciones', async (req, res) => {
 
 
     //arrancar server
-    
-     if (require.main === module) {
-        const PORT = process.env.PORT || 3000;
-        app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`);
-        });
-    }
-     module.exports = app; 
+     const PORT = process.env.PORT || 3000;
+     app.listen(PORT, () => {
+         console.log(`Server is running on port ${PORT}`);
+     });
      // Uso de rutas
 // app.use('/api', routes);
 

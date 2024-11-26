@@ -7,11 +7,12 @@
     const http = require('http');
     const path = require('path');
     const cors = require('cors'); 
+    const sequelize = require('./config/database');
+
 
     const Musico = require('./models/musico');
     const Instrumento = require('./models/instrumento');
     const Publicacion = require('./models/publicacion');
-    const sequelize = require('./config/database');
     const Grupos = require('./models/grupos');
     const GruposMusicos = require('./models/gruposMusicos');
     const Rol = require('./models/rol');

@@ -1,13 +1,13 @@
 const { Sequelize } = require('sequelize');
 
-/*const sequelize = new Sequelize('Linkepum', 'alumno', 'alumnoipm', {
+const sequelize = new Sequelize('Linkepum', 'alumno', 'alumnoipm', {
     host: 'localhost',
     dialect: 'mysql',
-});*/
-const sequelize = new Sequelize('Linkepum', 'root', 'Mysql45822?', {
+});
+/*const sequelize = new Sequelize('Linkepum', 'root', 'Mysql45822?', {
     host: 'localhost',
     dialect: 'mysql', 
-});
+});*/
 
 
 sequelize.authenticate()
